@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Website</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     body {
       padding-top: 70px;
-      padding-bottom: 70px; /* Add padding bottom to make space for the footer */
-      position: relative; /* Add relative position to the body */
+      padding-bottom: 70px;
+      position: relative;
     }
 
     .header {
@@ -42,30 +43,20 @@
       color: #fff;
       text-align: center;
       padding: 20px;
-      position: absolute; /* Change position to absolute */
+      position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
     }
 
-    #image_slider_ex {
-      height: 500px;
-      width: 500px;
+    .social-icons a {
+      color: #fff;
+      margin: 0 5px;
     }
   </style>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('body').css('padding-top', $('.header').outerHeight() + 'px');
-    });
-
-    setInterval(function() {
-      $('.carousel').carousel('next');
-    }, 2000);
-  </script>
 </head>
 
 <body>
@@ -80,13 +71,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link register-link" href="./signup.php">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#">Testimonials</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -142,6 +133,12 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
       <p>&copy; 2023 Your Website. All rights reserved.</p>
     </div>
   </footer>

@@ -175,9 +175,10 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
 </head>
 
 <body>
@@ -187,52 +188,69 @@
             <form action="#">
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">Full Name</span>
+                        <div class="details">
+                            <i class="fas fa-user"></i>
+                            Full Name
+                        </div>
                         <input type="text" placeholder="Enter your name" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Fathername</span>
+                        <div class="details">
+                            <i class="fas fa-user"></i>
+                            Fathername
+                        </div>
                         <input type="text" placeholder="Enter your username" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Email</span>
+                        <div class="details">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </div>
                         <input type="text" placeholder="Enter your email" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Phone Number</span>
+                        <div class="details">
+                            <i class="fas fa-phone"></i>
+                            Phone Number
+                        </div>
                         <input type="text" placeholder="Enter your number" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">school name</span>
+                        <div class="details">
+                            <i class="fas fa-address-card"></i>
+                            Address
+                        </div>
                         <input type="text" placeholder="Enter your password" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">dew</span>
+                        <div class="details">
+                            <i class="fas fa-school"></i>
+                            School name
+                        </div>
                         <input type="text" placeholder="Confirm your password" required>
                     </div>
+                    <div class="input-box">
+                        <label for="">Standard</label>
+                        <select name="Standard" id="">
+                            <option value="not selected">select</option>
+                            <option value="8th">8th</option>
+                            <option value="9th">9th</option>
+                            <option value="10th">10th</option>
+                            <option value="11th">11th</option>
+                            <option value="12th">12th</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Board</label>
+                        <select name="gender" id="">
+                            <option value="not selected">select</option>
+                            <option value="ICSE">ICSE</option>
+                            <option value="CBSE">CBSE</option>
+                        </select>
+                    </div>
+
                 </div>
-
-
-                <div class="input-box">
-                    <label for="">Gender</label>
-                    <select name="gender" id="">
-                        <option value="not selected">select</option>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
-                    </select>
-                </div>
-
-                
-                <div class="input-box">
-                    <label for="">Gender</label>
-                    <select name="gender" id="">
-                        <option value="not selected">select</option>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
-                    </select>
-                </div>
-
-
                 <div class="gender-details">
                     <input type="radio" name="gender" id="dot-1">
                     <input type="radio" name="gender" id="dot-2">
@@ -255,7 +273,7 @@
                 </div>
 
                 <div class="button">
-                    <input type="submit" name="submit"  value="Register">
+                    <input type="submit" name="submit" value="Register">
                 </div>
             </form>
         </div>
