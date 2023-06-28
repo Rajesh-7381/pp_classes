@@ -52,6 +52,12 @@
     .social-icons a {
       color: #fff;
       margin: 0 5px;
+      
+    }
+    .company_about_contact_us li{
+      border: none;
+      text-align: left;
+     
     }
   </style>
 
@@ -127,17 +133,26 @@
       <?php
       include("./grid.php");
       ?>
+      
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <div class="row">
+        <div class="col">
+          <ul class="company_about_contact_us">Company
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Alumni Speaks</a></li>
+          </ul>
+        </div>
+        <div class="col social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
       <p>&copy; 2023 Your Website. All rights reserved.</p>
     </div>

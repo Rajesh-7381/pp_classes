@@ -63,7 +63,10 @@
           <option>2024</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div>
+
+      </div>
+      <input type="submit" name="submit" value="Submit" class="btn btn-primary">Submit</input>
     </form>
   </div>
 

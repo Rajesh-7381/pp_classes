@@ -128,7 +128,7 @@
 
         form .button input {
             height: 100%;
-            width: 100%;
+            width: 20%;
             border-radius: 5px;
             border: none;
             color: #fff;
@@ -137,13 +137,13 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
         }
 
-        form .button input:hover {
-            /* transform: scale(0.99); */
-            background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-        }
+        /* form .button input:hover { */
+        /* transform: scale(0.99); */
+        /* background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        } */
 
         @media(max-width: 584px) {
             .container {
@@ -182,6 +182,7 @@
 </head>
 
 <body>
+    <br><br><br>
     <div class="container">
         <div class="title">Registration</div>
         <div class="content">
@@ -273,7 +274,7 @@
                 </div>
 
                 <div class="button">
-                    <input type="submit" name="submit" value="Register">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
                 </div>
             </form>
         </div>
