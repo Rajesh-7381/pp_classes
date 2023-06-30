@@ -4,7 +4,7 @@ function validate_form(){
     var email=document.getElementById("email").value;
     var phone=document.getElementById("phone").value;
     var standard=document.getElementById("standard").value;
-    if(name < 0){
+    if(name.length < 0){
         alert("it should be above 3");
     }
 }

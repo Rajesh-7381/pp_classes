@@ -59,6 +59,14 @@
       text-align: left;
      
     }
+    .start-inside2 a:hover{
+    font-size: 24px;
+    background-color: rgb(229, 229, 216) ;
+    color: black;
+    border-radius: 6px;
+
+
+}
   </style>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -74,7 +82,7 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end start-inside2" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link register-link" href="./signup.php">Register</a>
