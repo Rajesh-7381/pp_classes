@@ -71,6 +71,15 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $(".register-link").click(function(e) {
+      e.preventDefault();
+      window.location.href = "./signup.php";
+    });
+  });
+</script>
+
 </head>
 
 <body>
@@ -85,7 +94,7 @@
       <div class="collapse navbar-collapse justify-content-end start-inside2" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link register-link" href="./signup.php">Register</a>
+            <a class="nav-link register-link" href="#">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>

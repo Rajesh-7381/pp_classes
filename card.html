@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card with Image Upload</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .card-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Header Content -->
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Card with Image Upload</h1>
+      <div id="cardContainer" class="card-container">
+        <!-- Existing Cards -->
+      </div>
+      <button id="addCardButton" class="btn btn-primary">Add Card</button>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Footer Content -->
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let cardCount = 0;
+
+      // Add Card Button Click Event
+      $("#addCardButton").click(function () {
+        addCard();
+      });
+
+      // Delete Card Button Click Event
+      $(document).on("click", ".delete-card", function () {
+        $(this).closest(".card").remove();
+      });
+
+      // Function to Add a Card
+      function addCard() {
+        cardCount++;
+
+        const cardHTML = `
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Card ${cardCount}</h5>
+              <form>
+                <div class="form-group">
+                  <label for="profilePicture${cardCount}">Add Profile Picture</label>
+                  <input type="file" class="form-control-file" id="profilePicture${cardCount}" name="profilePicture">
+                </div>
+                <div class="form-group">
+                  <label for="text${cardCount}">Text</label>
+                  <textarea class="form-control" id="text${cardCount}" name="text"></textarea>
+                </div>
+                <button type="button" class="btn btn-danger delete-card">Delete</button>
+              </form>
+            </div>
+          </div>
+        `;
+
+        $("#cardContainer").append(cardHTML);
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -28,25 +28,36 @@
       font-weight: bolder;
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Load default content
+      $('.content').load('home.html');
+
+      // Handle sidebar link clicks
+      $('.nav-link').click(function(e) {
+        e.preventDefault(); // Prevent link from redirecting
+
+        var page = $(this).attr('href');
+        $('.content').load(page); // Load the page content into the content div
+      });
+    });
+  </script>
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 sidebar">
-
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Home</a>
+            <a class="nav-link color_white213" href="home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Login</a>
+            <a class="nav-link color_white213" href="admin_login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Register Details</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Register Details</a>
+            <a class="nav-link color_white213" href="">Register Details</a>
           </li>
           <li class="nav-item">
             <a class="nav-link color_white213" href="#">Contact Us</a>
@@ -55,7 +66,7 @@
             <a class="nav-link color_white213" href="#">Explore Program</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Almuni Speaks</a>
+            <a class="nav-link color_white213" href="#">Alumni Speaks</a>
           </li>
           <li class="nav-item">
             <a class="nav-link color_white213" href="#">Resources</a>
