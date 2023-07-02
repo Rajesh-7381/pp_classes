@@ -6,21 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Sidebar</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     .sidebar {
       background-color: #333;
       color: #fff;
       padding: 20px;
       height: 100vh; /* Set sidebar height to full viewport height */
+      position: fixed; /* Set the sidebar position as fixed */
+      top: 0; /* Position the sidebar at the top of the viewport */
+      left: 0; /* Position the sidebar at the left of the viewport */
     }
 
     .content {
       padding: 20px;
+      margin-left: 250px; /* Add margin to content to accommodate the fixed sidebar */
     }
 
     .sidebar .nav-link:hover {
       background-color: white;
       color: #333;
+    }
+
+    .sidebar .nav-link i {
+      margin-right: 10px;
     }
 
     .color_white213 {
@@ -51,31 +60,37 @@
       <div class="col-md-3 col-lg-2 sidebar">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link color_white213" href="home.html">Home</a>
+            <a class="nav-link color_white213" href="home.html"><i class="fas fa-home"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="admin_login.php">Login</a>
+            <a class="nav-link color_white213" href="admin_login.php"><i class="fas fa-user"></i>Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="">Register Details</a>
+            <a class="nav-link color_white213" href="./admin_register.php"><i class="fas fa-clipboard"></i>Register Details</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Contact Us</a>
+            <a class="nav-link color_white213" href="./contact_us.php"><i class="fas fa-envelope"></i>Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Explore Program</a>
+            <a class="nav-link color_white213" href="#"><i class="fas fa-book"></i>Explore Program</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Alumni Speaks</a>
+            <a class="nav-link color_white213" href="#"><i class="fas fa-users"></i>Alumni Speaks</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Resources</a>
+            <a class="nav-link color_white213" href="#"><i class="fas fa-folder-open"></i>Resources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">Follow Us</a>
+            <a class="nav-link color_white213" href="./admin_testimonial.php"><i class="fas fa-comments"></i>Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#">About Us</a>
+            <a class="nav-link color_white213" href="./admin_gallery.php"><i class="fas fa-images"></i>Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link color_white213" href="./admin_followus.php"><i class="fab fa-twitter"></i>Follow Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link color_white213" href="#"><i class="fas fa-info-circle"></i>About Us</a>
           </li>
         </ul>
       </div>

@@ -43,13 +43,13 @@
                   <input type="email" name="email" class="form-control">
                 </div>
               </div>
-            </div>
+          
 
             <div class="row">
               <div class="col-md-12">
                 <div class="md-form">
                   <label for="message"><i class="fas fa-comments"></i> Message</label>
-                  <textarea type="text" name="message" id="message" rows="3" class="form-control md-textarea" onkeyup="message_counting(this)"></textarea>
+                  <textarea type="text" name="message" id="message" rows="2"  class="form-control md-textarea" onkeyup="message_counting(this)"></textarea>
                   <p id="charNum">100 characters remaining</p>
                 </div>
               </div>
