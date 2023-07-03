@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("connection.php");
 ?>
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ include("connection.php");
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+
         }
 
         body {
@@ -21,6 +23,8 @@ include("connection.php");
             justify-content: center;
             align-items: center;
             padding: 10px;
+            /* background-image: url("./images/pexels-katerina-holmes-5905448.jpg"); */
+            
             background: linear-gradient(135deg, #71b7e6, #9b59b6);
         }
 
@@ -45,9 +49,9 @@ include("connection.php");
             left: 0;
             bottom: 0;
             height: 3px;
-            width: 30px;
+            width: 150px;
             border-radius: 5px;
-            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            background: linear-gradient(360deg, #71b7e6, #9b59b6);
         }
 
         .content form .user-details {
@@ -124,29 +128,27 @@ include("connection.php");
             display: none;
         }
 
-        form .button {
+        form .button123 {
             height: 45px;
             margin: 35px 0
         }
 
-        form .button input {
+        form .button123 input {
             height: 100%;
             width: 20%;
-            border-radius: 5px;
+            border-radius: 22px;
             border: none;
             color: #fff;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 500;
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            background-color: blue;
             /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
         }
 
-        /* form .button input:hover { */
-        /* transform: scale(0.99); */
-        /* background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-        } */
+
 
         @media(max-width: 584px) {
             .container {
@@ -177,77 +179,134 @@ include("connection.php");
                 flex-direction: column;
             }
         }
+
+        .roman {
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function validateFORM() {
+  var fullname = document.getElementById("fullname").value;
+  var fathername = document.getElementById("fathername").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+  var school = document.getElementById("school").value;
+  var standard = document.getElementById("standard").value;
+  var board = document.getElementById("board").value;
+  var gender = document.querySelector('input[name="gender"]:checked');
+
+  if (
+    fullname === "" ||
+    fathername === "" ||
+    email === "" ||
+    phone === "" ||
+    address === "" ||
+    school === "" ||
+    standard === "not selected" ||
+    board === "not selected" ||
+    !gender
+  ) {
+    alert("Please fill in all the required fields.");
+    return false; 
+  }
+
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!email.match(emailPattern)) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+
+  var phoneInput = document.getElementById("phone");
+  var phoneError = document.getElementById("phoneError");
+  var phoneValue = phoneInput.value.trim();
+
+  if (phoneValue.length !== 10) {
+    phoneError.innerText = "Please enter a 10-digit phone number.";
+    return false;
+  } else {
+    phoneError.innerText = "";
+    return true;
+  }
+
+  return true;
+}
+
+
+    </script>
     <title>Registration</title>
 </head>
 
 <body>
     <br><br><br>
+   
     <div class="container">
         <div class="title">Registration</div>
         <div class="content">
-            <form action="#">
+            <form action="#" method="POST" onsubmit="return validateFORM()">
                 <div class="user-details">
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-user"></i>
                             Full Name
                         </div>
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" placeholder="Enter your name" name="fullname" id="fullname" onkeydown="return alphaOnly(event);">
                     </div>
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-user"></i>
-                            Fathername
+                            Father's name
                         </div>
-                        <input type="text" placeholder="Enter your username" required>
+                        <input type="text" placeholder="Enter your father name" name="fathername" id="fathername" onkeydown="return alphaOnly(event);">
                     </div>
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-envelope"></i>
                             Email
                         </div>
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" id="email" name="email">
                     </div>
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-phone"></i>
                             Phone Number
                         </div>
-                        <input type="text" placeholder="Enter your number" required>
+                        <input type="text" placeholder="+91 123 456 7890" name="phone" id="phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     </div>
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-address-card"></i>
                             Address
                         </div>
-                        <input type="text" placeholder="Enter your password" required>
+                        <textarea type="text" placeholder="Enter your address" id="address" name="address"></textarea>
                     </div>
                     <div class="input-box">
                         <div class="details">
                             <i class="fas fa-school"></i>
                             School name
                         </div>
-                        <input type="text" placeholder="Confirm your password" required>
+                        <input type="text" placeholder="Enter your school name" id="school" name="school">
                     </div>
                     <div class="input-box">
-                        <label for="">Standard</label>
-                        <select name="Standard" id="">
+                        <label for="">Grade</label>
+                        <select name="standard" id="standard">
                             <option value="not selected">select</option>
-                            <option value="8th">8th</option>
-                            <option value="9th">9th</option>
-                            <option value="10th">10th</option>
-                            <option value="11th">11th</option>
-                            <option value="12th">12th</option>
+                            <option value="8th"><span class="roman">8th</span></option>
+                            <option value="9th"><span class="roman">9th</span></option>
+                            <option value="10th"><span class="roman">10th</span></option>
+                            <option value="11th"><span class="roman">11th</span></option>
+                            <option value="12th"><span class="roman">12th</span></option>
                         </select>
                     </div>
 
                     <div class="input-box">
                         <label for="">Board</label>
-                        <select name="gender" id="">
+                        <select name="board" id="board">
                             <option value="not selected">select</option>
                             <option value="ICSE">ICSE</option>
                             <option value="CBSE">CBSE</option>
@@ -256,9 +315,9 @@ include("connection.php");
 
                 </div>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
+                    <input type="radio" name="gender" value="Male" id="dot-1">
+                    <input type="radio" name="gender" value="Female" id="dot-2">
+                    <input type="radio" name="gender" value="Other" id="dot-3">
                     <span class="gender-title">Gender</span>
                     <div class="category">
                         <label for="dot-1">
@@ -276,8 +335,8 @@ include("connection.php");
                     </div>
                 </div>
 
-                <div class="button">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                <div class="button123">
+                    <input type="submit" name="submit" class="" value="Register">
                 </div>
             </form>
         </div>
@@ -285,3 +344,47 @@ include("connection.php");
 </body>
 
 </html>
+
+<?php
+include("connection.php");
+
+if (isset($_POST['submit'])) {
+    $fullname = $_POST['fullname'];
+    $fathername = $_POST['fathername'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $school = $_POST['school'];
+    $standard = $_POST['standard'];
+    $board = $_POST['board'];
+    $gender = $_POST['gender'];
+
+    $sql = "SELECT * FROM register WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+    $present = mysqli_num_rows($result);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ($present > 0) {
+?>
+            <script>
+                alert("This email already exists!");
+            </script>
+            <?php
+        } else {
+            $query = "INSERT INTO register (fullname, fathername, email, phone, address, schoolname, standard, board, gender) 
+                      VALUES ('$fullname', '$fathername', '$email', '$phone', '$address', '$school', '$standard', '$board', '$gender')";
+
+            $data = mysqli_query($conn, $query);
+            if ($data) {
+            ?>
+                <script>
+                    alert("Data inserted successfully!");
+                </script>
+<?php
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+    }
+}
+?>

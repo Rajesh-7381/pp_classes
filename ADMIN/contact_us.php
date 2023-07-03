@@ -33,6 +33,7 @@ require_once "./connection.php"
                         <tr style="color: hotpink;">
                             <th>Name</th>
                             <th>Email</th>
+                            <th>phone</th>
                             <th>Message</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@ require_once "./connection.php"
                     echo '<tr style="color: orange;">
                         <td>' . $result["name"] . '</td>
                         <td>' . $result["email"] . '</td>
+                        <td>' . $result["phone"] . '</td>
                         <td>' . $result["message"] . '</td>
                     </tr>';
                 }

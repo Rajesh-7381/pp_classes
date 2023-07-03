@@ -87,7 +87,7 @@
             <a class="nav-link color_white213" href="./admin_gallery.php"><i class="fas fa-images"></i>Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="./admin_followus.php"><i class="fab fa-twitter"></i>Follow Us</a>
+            <a class="nav-link color_white213" href="./up.php"><i class="fab fa-twitter"></i>Follow Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link color_white213" href="#"><i class="fas fa-info-circle"></i>About Us</a>

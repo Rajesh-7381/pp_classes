@@ -15,7 +15,7 @@
 
        
         .image-container img {
-            max-width: 50%; /* Adjust this value as needed */
+            max-width: 50%; 
             margin: 10px;
         }
 
