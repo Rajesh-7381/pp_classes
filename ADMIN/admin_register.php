@@ -7,11 +7,26 @@ require_once "./connection.php";
 
 <head>
     <style>
+        header {
+            background-color: #48F;
+            color: #fff;
+            padding: 3px;
+            position: fixed;
+            top: 0;
+            left: 286px;
+            right: 39px;
+            z-index: 999;
+        }
+
         .color-9090 {
             color: black;
             text-align: center;
             font-weight: bolder;
         }
+
+        /* .container-fluid{
+            background-color: red;
+        } */
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +35,27 @@ require_once "./connection.php";
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2 class="color-9090 text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Registered Student Details</i></h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <form class="d-flex" method="POST" action="search.php">
+                    <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+                    <button class="btn btn-outline-success " name="submit2" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <br><br><br>
+
+
     <div class="container">
-        <h2 class="color-9090 text-center">Regisered Student</h2>
         <div class="table-responsive">
 
             <?php
@@ -35,9 +69,11 @@ require_once "./connection.php";
                         <tr style="color: hotpink;">
                             <th>ID</th>
                             <th>Full Name</th>
-                            <th>Father Name</th>
-                            <th>Email</th>
                             <th>Phone</th>
+                            <th>Father Name</th>
+                            <th>Father Phone no.</th>
+                            <th>Email</th>
+                            
                             <th>Address</th>
                             <th>Standard</th>
                             <th>School Name</th>
@@ -52,9 +88,11 @@ require_once "./connection.php";
                     echo '<tr style="color: orange;">
                         <td>' . $result["id"] . '</td>
                         <td>' . $result["fullname"] . '</td>
-                        <td>' . $result["fathername"] . '</td>
-                        <td>' . $result["email"] . '</td>
                         <td>' . $result["phone"] . '</td>
+                        <td>' . $result["fathername"] . '</td>
+                        <td>' . $result["fathernumber"] . '</td>
+                        <td>' . $result["email"] . '</td>
+                        
                         <td>' . $result["address"] . '</td>
                         <td>' . $result["standard"] . '</td>
                         <td>' . $result["schoolname"] . '</td>
@@ -62,7 +100,7 @@ require_once "./connection.php";
                         <td>' . $result["gender"] . '</td>
                         <td>
                             <a href="admin_update.php?id=' . $result["id"] . '"><input type="submit" value="update" class="btn btn-success"></a>
-                            <a href="delete.php?id=' . $result["id"] . '"><input type="submit" value="delete" class="btn btn-danger" onclick="return DEL()"></a>
+                            <a href="delete.php?id=' . $result["id"] . '"><input type="submit" value="D elete" class="btn btn-danger" onclick="return DEL()"></a>
                         </td>
                     </tr>';
                 }

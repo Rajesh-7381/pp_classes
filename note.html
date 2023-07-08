@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-family: arial;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    .card img {
+      width: 100%;
+    }
+
+    .card-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center">User Profile Card</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <form id="profile-form">
+            <div class="mb-3">
+              <label for="profile-image" class="form-label">Profile Image:</label>
+              <input type="file" class="form-control" id="profile-image" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message:</label>
+              <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <div class="card-details">
+              <h1>John Doe</h1>
+              <p class="title">CEO & Founder, Example</p>
+              <p>Harvard University</p>
+              <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-dribbble"></i></a> 
+                <a href="#"><i class="fa fa-twitter"></i></a>  
+                <a href="#"><i class="fa fa-linkedin"></i></a>  
+                <a href="#"><i class="fa fa-facebook"></i></a> 
+              </div>
+              <p><button type="submit" class="btn btn-primary add-profile-btn">Add</button></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Add event listener to the form submission
+    document.querySelector('#profile-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get the values from the form
+      const profileImage = document.querySelector('#profile-image').files[0];
+      const message = document.querySelector('#message').value;
+
+      // Clone the profile card
+      const profileCard = document.querySelector('.card');
+      const clonedCard = profileCard.cloneNode(true);
+
+      // Modify the content of the cloned card
+      const clonedImage = clonedCard.querySelector('img');
+      const clonedMessage = clonedCard.querySelector('.card-details p:nth-child(4)');
+
+      clonedImage.setAttribute('src', URL.createObjectURL(profileImage));
+      clonedMessage.textContent = message;
+
+      // Append the cloned card to the container
+      document.querySelector('.row').appendChild(clonedCard);
+
+      // Reset the form fields
+      document.querySelector('#profile-image').value = '';
+      document.querySelector('#message').value = '';
+    });
+  </script>
+</body>
+</html>

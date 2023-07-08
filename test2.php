@@ -28,34 +28,57 @@
     }
   </style>
   <title>Signup Form</title>
+  <script >
+    function validateFORM(){
+      var name=document.getElementById("fullname").value;
+      var phone=document.getElementById("phone").value;
+      var email=document.getElementById("email").value;
+      var school=document.getElementById("school").value;
+      var address=document.getElementById("address").value;
+      var passing_year=document.getElementById("passing_year").value;
+
+      var nameERROR=Document.getElementById("nameError");
+      var phoneERROR=Document.getElementById("phoneError");
+      var emailERROR=Document.getElementById("emailError");
+      var schoolERROR=Document.getElementById("schoolError");
+      var addressERROR=Document.getElementById("addressError");
+      var passERROR=Document.getElementById("passError");
+    }
+  </script>
 </head>
 <body>
-  <div class="container">
+  <div class="coner">
     <h3>Testimonials</h3>
     <form method="POST">
       <div class="form-group">
         <label for="name"><i class="fas fa-user"></i> Name:</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        <input type="text" class="form-control" id="fullname" name="name" placeholder="Enter your name">
+        <small id="nameError" class="text-danger"></small>
       </div>
       <div class="form-group">
         <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
         <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+        <small id="phoneError" class="text-danger"></small>
       </div>
       <div class="form-group">
         <label for="email"><i class="fas fa-envelope"></i> Email:</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        <small id="emailError" class="text-danger"></small>
       </div>
       <div class="form-group">
         <label for="school"><i class="fas fa-school"></i> School Name:</label>
         <input type="text" class="form-control" id="school" name="school" placeholder="Enter your school name">
+        <small id="shoolError" class="text-danger"></small>
       </div>
       <div class="form-group">
         <label for="address"><i class="fas fa-map-marker-alt"></i> Address:</label>
         <textarea type="text" class="form-control" id="address" name="address" placeholder="Enter your address"></textarea>
+        <small id="addressError" class="text-danger"></small>
       </div>
       <div class="form-group">
         <label for="passing-year"><i class="fas fa-calendar-alt"></i> Passing Year:</label>
-        <select class="form-control" name="passing_year" id="passing-year">
+        <select class="form-control" name="passing_year" id="passing_year">
+        <small id="passingError" class="text-danger"></small>
 
           <option value="2020">2020</option>
           <option value="2021">2021</option>

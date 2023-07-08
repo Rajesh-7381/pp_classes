@@ -12,15 +12,15 @@
       background-color: #333;
       color: #fff;
       padding: 20px;
-      height: 100vh; /* Set sidebar height to full viewport height */
-      position: fixed; /* Set the sidebar position as fixed */
-      top: 0; /* Position the sidebar at the top of the viewport */
-      left: 0; /* Position the sidebar at the left of the viewport */
+      height: 100vh; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
     }
 
     .content {
       padding: 20px;
-      margin-left: 250px; /* Add margin to content to accommodate the fixed sidebar */
+      margin-left: 250px;
     }
 
     .sidebar .nav-link:hover {
@@ -40,15 +40,14 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function() {
-      // Load default content
+      
       $('.content').load('home.html');
 
-      // Handle sidebar link clicks
       $('.nav-link').click(function(e) {
-        e.preventDefault(); // Prevent link from redirecting
+        e.preventDefault();
 
         var page = $(this).attr('href');
-        $('.content').load(page); // Load the page content into the content div
+        $('.content').load(page); 
       });
     });
   </script>
@@ -60,7 +59,10 @@
       <div class="col-md-3 col-lg-2 sidebar">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link color_white213" href="home.html"><i class="fas fa-home"></i>Home</a>
+            <a class="nav-link color_white213" href="home.html"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link color_white213" href="#"><i class="fas fa-home"></i>Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link color_white213" href="admin_login.php"><i class="fas fa-user"></i>Login</a>
@@ -90,7 +92,7 @@
             <a class="nav-link color_white213" href="./up.php"><i class="fab fa-twitter"></i>Follow Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color_white213" href="#"><i class="fas fa-info-circle"></i>About Us</a>
+            <a class="nav-link color_white213" href="./aboutus.php"><i class="fas fa-info-circle"></i>About Us</a>
           </li>
         </ul>
       </div>

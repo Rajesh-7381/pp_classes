@@ -111,7 +111,11 @@ if (isset($_POST['update'])) {
 
     if ($data) {
         echo "Record updated";
-         header('location:home.php');
+        ?>
+        <script>
+            window.location.href='admin_register.php';
+        </script>
+        <?php
     } else {
         echo "Failed to update record";
     }
