@@ -10,84 +10,94 @@ $result = mysqli_fetch_assoc($data);
 <html lang="en">
 
 <head>
-    <style>
-        .form-inline {
-            padding: 22px;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="update.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+    border: 13px solid #ccc;
+    padding: 47px;
+    border-radius: 25px;
+    margin-top: 290px;
+}
+    </style>
 </head>
 
-
 <body>
-    <div class="container">
-        <form action="#" method="POST" class="form-inline">
-            <div class="title form-group ">
-                <h2 class="cd">Update Form</h2>
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-user"> &nbsp;Full Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <input type="text" class="input" name="fname" value="<?php echo $result['fullname']; ?>">
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-user"> &nbsp;Father Name &nbsp;</i></label>
-                <input type="text" class="input" name="ffname" value="<?php echo $result['fathername']; ?>">
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-user"> &nbsp;Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <input type="text" class="input" name="email" value="<?php echo $result['email']; ?>">
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-user"> &nbsp;Phone &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <input type="text" class="input" name="phone" value="<?php echo $result['phone']; ?>">
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-map-marker-alt"> &nbsp;Address &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <textarea name="address" id="" cols="23" rows="2" class="textarea"><?php echo $result['address']; ?></textarea>
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-book"> &nbsp;Board &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <select name="board" id="">
-                    <option value='ICSE' <?= $result['Board'] == 'ICSE' ? 'selected' : '' ?>>ICSE</option>
-                    <option value='CBSE' <?= $result['Board'] == 'CBSE' ? 'selected' : '' ?>>CBSE</option>
-                </select>
-            </div>
-            <div class="input_field">
-                <label for=""> <i class="fas fa-school">&nbsp;School&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <input type="text" class="input" name="school" value="<?php echo $result['schoolname']; ?>">
-            </div>
-            <div class="input_field">
-                <label for=""><i class="fas fa-chalkboard">&nbsp;Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <select name="standard" id="">
-                    <option value='8th' <?= $result['standard'] == '8th' ? 'selected' : '' ?>>8th</option>
-                    <option value='9th' <?= $result['standard'] == '9th' ? 'selected' : '' ?>>9th</option>
-                    <option value='10th' <?= $result['standard'] == '10th' ? 'selected' : '' ?>>10th</option>
-                    <option value='11th' <?= $result['standard'] == '11th' ? 'selected' : '' ?>>11th</option>
-                    <option value='12th' <?= $result['standard'] == '12th' ? 'selected' : '' ?>>12th</option>
-                </select>
-            </div>  
-
-            <div class="input_field">
-                <label for=""> <i class="fas fa-venus-mars">&nbsp;Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></label>
-                <select name="gender" id="">
-                    <option value='male' <?= $result['gender'] == 'male' ? 'selected' : '' ?>>Male</option>
-                    <option value='female' <?= $result['gender'] == 'female' ? 'selected' : '' ?>>Female</option>
-                    <option value='other' <?= $result['gender'] == 'other' ? 'selected' : '' ?>>other</option>
-                </select>
-            </div>
-            <div class="input_field btn btn-primary">
-                <input type="submit" value="Update" class="btn" name="update">
-            </div>
+    <div>
+        <a href="./admin_.php">BACK</a>
     </div>
-
-    </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2 class="text-center mb-4">Update Form</h2>
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label"><b>Full Name: </b></label>
+                            <input type="text" class="form-control" id="fullname" name="fname" value="<?php echo $result['fullname']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fathername" class="form-label"><b>Father Name:</b></label>
+                            <input type="text" class="form-control" id="fathername" name="ffname" value="<?php echo $result['fathername']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><b>Email:</b></label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $result['email']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label"><b>Phone:</b></label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $result['phone']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label"><b>Address:</b></label>
+                            <textarea class="form-control" id="address" name="address" rows="2" required><?php echo $result['address']; ?></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="board" class="form-label"><b>Board:</b></label>
+                            <select class="form-select" id="board" name="board" required>
+                                <option value="ICSE" <?php if ($result['Board'] == 'ICSE') echo 'selected'; ?>>ICSE</option>
+                                <option value="CBSE" <?php if ($result['Board'] == 'CBSE') echo 'selected'; ?>>CBSE</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="school" class="form-label"><b>School:</b></label>
+                            <input type="text" class="form-control" id="school" name="school" value="<?php echo $result['schoolname']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="standard" class="form-label"><b>Standard:</b></label>
+                            <select class="form-select" id="standard" name="standard" required>
+                                <option value="8th" <?php if ($result['standard'] == '8th') echo 'selected'; ?>>8th</option>
+                                <option value="9th" <?php if ($result['standard'] == '9th') echo 'selected'; ?>>9th</option>
+                                <option value="10th" <?php if ($result['standard'] == '10th') echo 'selected'; ?>>10th</option>
+                                <option value="11th" <?php if ($result['standard'] == '11th') echo 'selected'; ?>>11th</option>
+                                <option value="12th" <?php if ($result['standard'] == '12th') echo 'selected'; ?>>12th</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gender" class="form-label"><b>Gender:</b></label>
+                            <select class="form-select" id="gender" name="gender" required>
+                                <option value="male" <?php if ($result['gender'] == 'male') echo 'selected'; ?>>Male</option>
+                                <option value="female" <?php if ($result['gender'] == 'female') echo 'selected'; ?>>Female</option>
+                                <option value="other" <?php if ($result['gender'] == 'other') echo 'selected'; ?>>Other</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" name="update">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
